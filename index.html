@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COUNTDOWN</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>COUNTDOWN</h1>
+
+  <div class="settings">
+    <label>Total days <input type="number" id="totalDays" min="1" max="366" value="45" /></label>
+    <label>Start date <input type="date" id="startDate" /></label>
+    <button id="applyBtn">Apply</button>
+  </div>
+
+  <div class="info-row">
+    <p id="summary"></p>
+    <span id="clock"></span>
+  </div>
+
+  <!-- NEW: login box (hidden when you are logged in) -->
+  <div id="loginBox" class="login" hidden>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="loginBtn">Log in</button>
+  </div>
+
+  <!-- NEW: sync status and log out -->
+  <div class="info-row">
+    <p id="cloudStatus"></p>
+    <button id="logoutBtn" hidden>Log out</button>
+  </div>
+
+  <div class="main">
+    <div id="grid"></div>
+  
+    <!-- NEW: goals to finish before the countdown ends -->
+    <aside id="goals">
+      <h3> </h3>
+      <p id="goalProgress"></p>
+      <ul id="goalList"></ul>
+      <form id="goalForm">
+        <input type="text" id="goalInput" placeholder="" maxlength="80" required />
+        <button type="submit">Add</button>
+      </form>
+    </aside>
+  </div>
+
+  <!-- NEW: Supabase library, loaded before our script -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
