@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #404f5e;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 0px;
+  }
+  
+  .settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+  }
+  
+  button {
+    padding: 9px 18px;
+    font-size: 15px;
+    background: #2c7dd2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Puts the summary and the clock in one row */
+  .info-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Removes the default paragraph margins so both texts line up */
+  .info-row #summary {
+    margin: 0;
+  }
+  
+  #summary {
+    color: #c8ced8;
+  }
+  
+  /* The clock beside the summary */
+  #clock {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8ec5ff;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* The grid of circles, wraps automatically on small screens */
+  #grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  
+  /* One circle */
+  .day {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: #f6fffb;
+    border: 2px solid #687b8f;
+    box-shadow: 0 2px 6px rgb(211 101 101 / 83%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* The big countdown number */
+  .day .num {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  /* Small texts at the bottom: English date, Nepali date, weekday */
+  .day .en,
+  .day .np {
+    position: absolute;
+    bottom: 16px;
+    font-size: 9px;
+  }                              /* <-- this closing brace was missing before */
+  
+  .day .en { left: 12px; }       /* English date */
+  .day .np { right: 14px; }      /* Nepali date */
+  
+  /* Weekday in the bottom center, now its own separate rule */
+  .day .wd {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    font-weight: bold;
+    opacity: 0.7;
+  }
+  
+  /* Days that have passed: filled red */
+  .day.done {
+    background: #ce0d0d;
+    border-color: black;
+    color: white;
+  }
+  
+  /* Today gets a dark ring so you can find it quickly */
+  .day.today {
+    border-color: #4d2216;
+    box-shadow: 0 0 0 4px #804242a6;
+  }
